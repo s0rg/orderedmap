@@ -4,9 +4,9 @@
 [![Tag](https://img.shields.io/github/v/tag/s0rg/orderedmap?sort=semver)](https://github.com/s0rg/orderedmap/tags)
 
 [![CI](https://github.com/s0rg/grid/workflows/ci/badge.svg)](https://github.com/s0rg/grid/actions?query=workflow%3Aci)
+[![Go Report Card](https://goreportcard.com/badge/github.com/s0rg/orderedmap)](https://goreportcard.com/report/github.com/s0rg/orderedmap)
 [![Maintainability](https://api.codeclimate.com/v1/badges/87648afa2a219e5ca0c8/maintainability)](https://codeclimate.com/github/s0rg/orderedmap/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/87648afa2a219e5ca0c8/test_coverage)](https://codeclimate.com/github/s0rg/orderedmap/test_coverage)
-[![Go Report Card](https://goreportcard.com/badge/github.com/s0rg/orderedmap)](https://goreportcard.com/report/github.com/s0rg/orderedmap)
 ![Issues](https://img.shields.io/github/issues/s0rg/orderedmap)
 
 # orderedmap
