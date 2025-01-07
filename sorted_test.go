@@ -46,6 +46,48 @@ func TestSortedSet(t *testing.T) {
 			t.Fail()
 		}
 	}
+
+	m.Del("1")
+
+	{
+		want := []string{"2", "3"}
+		have := make([]string, 0, 2)
+
+		for k := range m.Iter {
+			have = append(have, k)
+		}
+
+		if !slices.Equal(want, have) {
+			t.Fail()
+		}
+	}
+
+	m.Del("3")
+
+	{
+		want := []string{"2"}
+		have := make([]string, 0, 1)
+
+		for k := range m.Iter {
+			have = append(have, k)
+		}
+
+		if !slices.Equal(want, have) {
+			t.Fail()
+		}
+	}
+
+	m.Del("2")
+
+	have := make([]string, 0, 1)
+
+	for k := range m.Iter {
+		have = append(have, k)
+	}
+
+	if len(have) > 0 {
+		t.Fail()
+	}
 }
 
 func TestSortedGet(t *testing.T) {
@@ -154,6 +196,27 @@ func TestSortedClone(t *testing.T) {
 	}
 
 	if !c.Has("2") {
+		t.Fail()
+	}
+}
+
+func TestSortedNew(t *testing.T) {
+	t.Parallel()
+
+	m := orderedmap.NewSorted[int, string]()
+
+	m.Set(10, "10")
+	m.Set(1, "1")
+	m.Set(5, "5")
+
+	want := []int{1, 5, 10}
+	have := make([]int, 0, 3)
+
+	for k := range m.Iter {
+		have = append(have, k)
+	}
+
+	if !slices.Equal(want, have) {
 		t.Fail()
 	}
 }

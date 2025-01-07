@@ -12,6 +12,11 @@ type Sorted[K cmp.Ordered, V any] struct {
 	o []K
 }
 
+// NewSorted creates empty sorted map.
+func NewSorted[K cmp.Ordered, V any]() (rv *Sorted[K, V]) {
+	return &Sorted[K, V]{}
+}
+
 // Set adds new element to map.
 func (s *Sorted[K, V]) Set(key K, value V) {
 	if s.m == nil {

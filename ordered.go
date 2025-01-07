@@ -11,6 +11,11 @@ type Ordered[K comparable, V any] struct {
 	o []K
 }
 
+// NewOrdered creates empty ordered map.
+func NewOrdered[K comparable, V any]() (rv *Ordered[K, V]) {
+	return &Ordered[K, V]{}
+}
+
 // Set adds new element to map.
 func (o *Ordered[K, V]) Set(key K, value V) {
 	if o.m == nil {
