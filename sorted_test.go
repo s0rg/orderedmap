@@ -139,15 +139,19 @@ func TestSortedDel(t *testing.T) {
 	m.Del("1") // double-delete to make sure its ok
 
 	if m.Len() != 1 {
+		t.Log("1", m.Len())
 		t.Fail()
 	}
 
 	val, ok := m.Get("2")
 	if !ok {
+		t.Log("2")
 		t.Fail()
 	}
 
 	if val != "bar" {
+
+		t.Log("3")
 		t.Fail()
 	}
 }
@@ -156,6 +160,10 @@ func TestSortedIter(t *testing.T) {
 	t.Parallel()
 
 	var m orderedmap.Sorted[string, string]
+
+	for k := range m.Iter {
+		_ = k
+	}
 
 	m.Set("1", "1")
 	m.Set("2", "2")
