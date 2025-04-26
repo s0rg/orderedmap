@@ -1,34 +1,49 @@
+version: "2"
 run:
   allow-parallel-runners: true
-
-output:
-  print-issued-lines: true
-  print-linter-name: true
-  sort-results: true
-
 linters:
-  enable-all: true
+  default: all
   disable:
-    - nonamedreturns
-    - exhaustruct
-    - varnamelen
     - depguard
+    - exhaustruct
     - ireturn
-
-linters-settings:
-  govet:
-    enable-all: true
-  gocritic:
-    enabled-tags:
-      - performance
-      - opinionated
-      - diagnostic
-      - style
-
-issues:
-  exclude-rules:
-    - path: ._test\.go
-      linters:
-        - dupl
-        - cyclop
-        - funlen
+    - nonamedreturns
+    - varnamelen
+  settings:
+    gocritic:
+      enabled-tags:
+        - performance
+        - opinionated
+        - diagnostic
+        - style
+    govet:
+      enable-all: true
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - cyclop
+          - dupl
+          - funlen
+        path: ._test\.go
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$

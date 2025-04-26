@@ -157,6 +157,10 @@ func TestSortedIter(t *testing.T) {
 
 	var m orderedmap.Sorted[string, string]
 
+	for k := range m.Iter {
+		_ = k
+	}
+
 	m.Set("1", "1")
 	m.Set("2", "2")
 	m.Set("3", "3")

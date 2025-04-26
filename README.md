@@ -5,8 +5,8 @@
 
 [![CI](https://github.com/s0rg/grid/workflows/ci/badge.svg)](https://github.com/s0rg/grid/actions?query=workflow%3Aci)
 [![Go Report Card](https://goreportcard.com/badge/github.com/s0rg/orderedmap)](https://goreportcard.com/report/github.com/s0rg/orderedmap)
-[![Maintainability](https://api.codeclimate.com/v1/badges/87648afa2a219e5ca0c8/maintainability)](https://codeclimate.com/github/s0rg/orderedmap/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/87648afa2a219e5ca0c8/test_coverage)](https://codeclimate.com/github/s0rg/orderedmap/test_coverage)
+[![Maintainability](https://qlty.sh/badges/a0323e57-a4fa-4bb5-a68c-6a8938aa3126/maintainability.svg)](https://qlty.sh/gh/s0rg/projects/orderedmap)
+[![Code Coverage](https://qlty.sh/badges/a0323e57-a4fa-4bb5-a68c-6a8938aa3126/test_coverage.svg)](https://qlty.sh/gh/s0rg/projects/orderedmap)
 ![Issues](https://img.shields.io/github/issues/s0rg/orderedmap)
 
 # orderedmap
@@ -18,7 +18,6 @@ Package orderedmap implements two types of generic maps, both iterates keys in o
 - two types of maps:
   - Ordered - iterates in same order as items inserted
   - Sorted - iterates in sorted order
-- zero-dependency
 - generic
 - 100% test coverage
 
