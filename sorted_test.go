@@ -139,19 +139,15 @@ func TestSortedDel(t *testing.T) {
 	m.Del("1") // double-delete to make sure its ok
 
 	if m.Len() != 1 {
-		t.Log("1", m.Len())
 		t.Fail()
 	}
 
 	val, ok := m.Get("2")
 	if !ok {
-		t.Log("2")
 		t.Fail()
 	}
 
 	if val != "bar" {
-
-		t.Log("3")
 		t.Fail()
 	}
 }
